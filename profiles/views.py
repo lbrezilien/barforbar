@@ -1,8 +1,9 @@
+from django.shortcuts import render
 from django.http import HttpResponse
 
 def home(request):
 
-     return HttpResponse("Hello, world. You're at the profiles index.")
+     return render(request, 'profiles/index.html')
 
 
 def login(request):
