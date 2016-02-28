@@ -27,6 +27,8 @@
         <li><a href="{% url 'account_login' %}">Lyrics</a></li>
         <li><a href="{% url 'account_logout' %}">Logout</a></li>
         <li><a href="{% url 'account_logout' %}">Discover</a></li>
+        <li><a href="{% url 'profiles_home' %}">Home</a></li>
+
         <li><a href="collapsible.html">About</a></li>
       </ul>
     </div>
@@ -36,7 +38,10 @@
     {% block content %} {% endblock %}
   </div>
 
+  <script src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+
+
 </body>
 
 </html>

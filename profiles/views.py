@@ -8,11 +8,12 @@ from django.contrib.auth.forms import UserCreationForm
 from django.http import HttpResponseRedirect
 from .models import User
 
+
 @login_required
 def home(request):
      item = User._meta.get_fields()
      users = User.objects.all()
-     return render(request, 'profiles/index.html', {'users':users, 'item':item})
+     return render(request, 'profiles/show.html', {'users':users, 'item':item})
 
 
 def signup(request):

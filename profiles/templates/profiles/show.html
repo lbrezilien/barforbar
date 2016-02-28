@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<script type="text/javascript">
+$(document).ready(function(){
+  $('ul.tabs').tabs();
+});
+
+$(document).ready(function(){
+
+  $('.collapsible').collapsible({
+    accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+  });
+});
+</script>
+
+<style>
+  img{
+    padding-top: 2%;
+  }
+  .add-padding{
+    padding-top: .7em;
+
+  }
+</style>
+
+
+
+
+<div class="row">
+  <div class="col s12">
+    <ul class="tabs">
+      <li class="tab col s3"><a href="#whoAmI" class="active" >Who am I?</a></li>
+      <li class="tab col s3"><a href="#test2">My Music</a></li>
+      <li class="tab col s3"><a href="#test4">My Account</a></li>
+    </ul>
+  </div>
+  <div id="whoAmI" class="col s12">
+    <div class="row">
+      <div class="col m8 ">
+          <h1 class="add-padding">  Lesly Brezilien </h1>
+      </div>
+      <div class="col  m4">
+        <div class="col s11 push-s3">
+          <img src="http://orig12.deviantart.net/4a0d/f/2012/200/0/1/tribal_wolf_head_avatar_by_darkwolf762-d57tft5.jpg" width="85%"/>
+        </div>
+      </div>
+      <hr>
+    </div>
+  </div>
+
+  <div id="test2" class="col s12">
+    <ul  class="collapsible popout" data-collapsible="accordion">
+      <li>
+        <div class="collapsible-header active"><i class="material-icons">queue_music</i>My Saved Lyrics</div>
+        <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+      </li>
+      <li>
+        <div class="collapsible-header"><i class="material-icons">playlist_add</i>Submit New Lyrics</div>
+        <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+      </li>
+    </ul>
+  </div>
+  <div id="test4" class="col s12">Test 4</div>
+</div>
+
+
+
+{% endblock %}
