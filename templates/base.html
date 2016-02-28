@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <style media="screen">
+    .transparentize {
+      margin-top: 16%;
+      border-radius: 3px;
+      opacity: .9;
+    }
+  </style>
+</head>
+
+<body class="yellow darken-1">
+
+  <nav>
+    <div class="nav-wrapper grey darken-4">
+      <a href="#" class="brand-logo center">bars4bars</a>
+      <ul id="nav-mobile" class="left hide-on-med-and-down">
+        <li><a href="{% url 'account_signup' %}">Signup</a></li>
+        <li><a href="{% url 'account_login' %}">Login</a></li>
+        <li><a href="{% url 'account_login' %}">Lyrics</a></li>
+        <li><a href="{% url 'account_logout' %}">Logout</a></li>
+        <li><a href="{% url 'account_logout' %}">Discover</a></li>
+        <li><a href="collapsible.html">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container ">
+    {% block content %} {% endblock %}
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+</body>
+
+</html>

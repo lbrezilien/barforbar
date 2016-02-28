@@ -1,11 +1,9 @@
-from django.conf.urls import url
-
+from django.conf.urls import include, url, patterns
+from django.contrib.auth import views as auth_views
 from . import views
 
 urlpatterns = [
     url(r'^$', views.home, name='home'),
-    url(r'^login', views.home, name='login'),
-    url(r'^signup', views.home, name='signup'),
-    url(r'^logout', views.home, name='logout'),
+    url(r'^change-password/', auth_views.password_change),
 
 ]
