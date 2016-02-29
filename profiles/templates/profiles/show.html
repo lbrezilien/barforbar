@@ -42,9 +42,10 @@ $(document).ready(function(){
   <div id="whoAmI" class="col s12">
     <div class="row flow-text z-depth-1">
       <div class="col m8 ">
-          <h2>Lesly Brezilien </h2>
+          <h2>{{user.first_name}} {{user.last_name}}</h2>
           <blockquote>
-              This is an example quotation that uses the blockquote tag.
+            This is an example quotation that uses the blockquote tag.
+              {{about.why_quote}}
          </blockquote>
       </div>
       <div class="col  m4">
@@ -80,7 +81,7 @@ $(document).ready(function(){
         <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
       </li>
       <li>
-        <div class="collapsible-header"><i class="material-icons">playlist_add</i>Previously Added</div>
+        <div class="collapsible-header"><i class="material-icons">playlist_add</i>What I'm Selling</div>
         <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
       </li>
     </ul>

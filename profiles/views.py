@@ -11,9 +11,9 @@ from .models import User
 
 @login_required
 def home(request):
-     item = User._meta.get_fields()
-     users = User.objects.all()
-     return render(request, 'profiles/show.html', {'users':users, 'item':item})
+     user = request.user
+     about = user.about_set
+     return render(request, 'profiles/show.html', {'user':user, 'about':about})
 
 
 def signup(request):
