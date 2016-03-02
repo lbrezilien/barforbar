@@ -1,7 +1,20 @@
 
-$('#testButton').click(function(){
-  debugger;
-})
+
+$('#accountForm').on('submit',function(e){
+  e.preventDefault();
+  $.post('/users/update_account', $(this).serialize()).done(function(){
+    debugger;
+
+  });
+});
+
+$('#aboutForm').on('submit', function(e){
+  e.preventDefault();
+  $.post('/users/update_about', $(this).serialize()).done(function(){
+    debugger;
+
+  });
+});
 
 $(document).ready(function(){
   $('ul.tabs').tabs();
