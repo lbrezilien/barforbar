@@ -1,0 +1,13 @@
+img{
+  padding-top: 2%;
+}
+.add-padding{
+  padding-top: .7em;
+
+}
+
+.transparentize {
+    margin-top: 16%;
+    border-radius: 3px;
+    opacity: .9;
+  }

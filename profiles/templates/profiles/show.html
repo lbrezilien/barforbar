@@ -1,41 +1,16 @@
+
 {% extends 'base.html' %}
+{% load staticfiles %}
 
 {% block content %}
-
-<script type="text/javascript">
-$(document).ready(function(){
-  $('ul.tabs').tabs();
-});
-
-$(document).ready(function(){
-
-  $('.collapsible').collapsible({
-    accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
-  });
-});
-</script>
-
-<style>
-  img{
-    padding-top: 2%;
-  }
-  .add-padding{
-    padding-top: .7em;
-
-  }
-</style>
-
-
-
 
 <div class="row">
   <div class="col s12">
     <ul class="tabs">
-      <li class="tab col s3"><a href="#whoAmI" class="active" >Who am I?</a></li>
+      <li class="tab col s3"><a href="#whoAmI"  >Who am I?</a></li>
       <li class="tab col s3"><a href="#test2">My Music</a></li>
-      <li class="tab col s3"><a href="#test4">My Account</a></li>
-      <li class="tab col s3"><a href="#test4">Stream</a></li>
-      <li class="tab col s3"><a href="#test4"><i class="material-icons">shopping_cart</i></a></li>
+      <li class="tab col s3"><a href="#accountEdit" class="active">My Account</a></li>
+      <li class="tab col s3"><a href="#cart"><i class="material-icons">shopping_cart</i></a></li>
 
     </ul>
   </div>
@@ -64,6 +39,7 @@ $(document).ready(function(){
 
       <h4> Briefly About Me: </h4>
       <p>
+        {{about.description}}
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam similique debitis nemo beatae laborum modi tempora qui dolores impedit reiciendis autem, facilis provident error sint incidunt, voluptatum quasi quaerat porro. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis ullam corporis eius delectus harum possimus optio saepe ipsam dolores excepturi molestiae praesentium adipisci nam rerum at quidem qui, commodi atque!
       </p>
       </div>
@@ -86,7 +62,41 @@ $(document).ready(function(){
       </li>
     </ul>
   </div>
-  <div id="test4" class="col s12">Test 4</div>
+
+  <div id="accountEdit" class="col s12">
+
+    <div class="row flow-text white z-depth-1">
+        <div class="col ">
+          <h4>Login Details:</h4>
+        </div>
+      <div class="col s12">
+        <form action="">
+          {{info_form.as_p}}
+          <div class="col offset-s5">
+            <button type="submit" class="btn "> Update My Info</button>
+          </div>
+        </form>
+      </div>
+   </div>
+
+  <div class="row flow-text white z-depth-1">
+    <div class="col col-offset-s1">
+      <h4>About Me:</h4>
+    </div>
+    <div class="col s12">
+      <form action="">
+        {{about_form.as_p}}
+        <div class="col offset-s5">
+          <button type="submit" class="btn "> Update my Details</button>
+       </div>
+
+
+      </form>
+    </div>
+ </div>
+
+  </div>
+
 </div>
 
 
