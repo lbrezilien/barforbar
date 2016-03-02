@@ -8,5 +8,8 @@ class Lyric(models.Model):
     title = models.CharField(max_length=100)
     content = models.CharField(max_length=500)
 
+class Mood(models.Model):
+    title = models.CharField(max_length=20)
+    lyric = models.ManyToManyField(Lyric)
 
 # Should I split up my models? Not sure
