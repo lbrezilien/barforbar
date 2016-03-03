@@ -4,7 +4,6 @@ from django.contrib.auth.models import User
 # Create your models here.
 class Mood(models.Model):
     title = models.CharField(max_length=20)
-
     def __str__(self):              # __unicode__ on Python 2
         return self.title
 

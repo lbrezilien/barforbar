@@ -1,11 +1,13 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from .forms import NewLyricForm
-from .models import Lyric
+from .models import Lyric, Mood, Genre
 import code
 def index(request):
+    moods = Mood.objects.all()
+    # code.interact(local=locals())
     #this will be where the discover link goes to
-    return render(request, 'lyrics/index.html')
+    return render(request, 'lyrics/index.html', locals())
 
 def search(request):
     #this will be where the discover link goes to
@@ -19,8 +21,8 @@ def new(request):
 @login_required
 def create(request):
     user = request.user
+    #add and if statement for update and create
     form = NewLyricForm(request.POST)
-
     if form.is_valid():
         instance = form.save(commit=False)
         instance.user = user
