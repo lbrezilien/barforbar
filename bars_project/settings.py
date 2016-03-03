@@ -31,14 +31,15 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'profiles',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'debug_toolbar'
+    'debug_toolbar',
+    'profiles',
+    'lyrics',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -125,7 +126,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),    
+    os.path.join(BASE_DIR, "static"),
 ]
 
 LOGIN_URL = 'account_login'

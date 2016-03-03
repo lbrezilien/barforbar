@@ -18,10 +18,7 @@ $('#aboutForm').on('submit', function(e){
 
 $(document).ready(function(){
   $('ul.tabs').tabs();
-});
-
-$(document).ready(function(){
-
+  $('select').material_select();
   $('.collapsible').collapsible({
     accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
   });

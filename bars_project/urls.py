@@ -22,6 +22,7 @@ urlpatterns = patterns('',
     url(r'^$', views.home, name='profiles_home'),
     url(r'^signup$', views.signup, name='account_signup'),
     url(r'^users/', include('profiles.urls')),
+    url(r'^lyrics/', include('lyrics.urls')),
     url(r'^admin/', admin.site.urls),
 )
 
