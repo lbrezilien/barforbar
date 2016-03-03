@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from .forms import NewLyricForm
+from .models import Lyric
 import code
 def index(request):
     #this will be where the discover link goes to
@@ -27,4 +28,10 @@ def create(request):
         for item in request.POST.getlist('moods'):
             instance.moods.add(item)
         instance.save()
-    return redirect('lyrics_index')
+    return redirect('lyrics_show', instance.id)
+
+def show(request, id):
+    lyrics = Lyric.objects.get(pk=id)
+
+    # code.interact(local=locals())
+    return render(request, 'lyrics/show.html', locals())
