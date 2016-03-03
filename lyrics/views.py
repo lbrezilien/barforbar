@@ -25,13 +25,13 @@ def create(request):
         instance = form.save(commit=False)
         instance.user = user
         instance.save()
-        for item in request.POST.getlist('moods'):
-            instance.moods.add(item)
+        for mood in request.POST.getlist('moods'):
+            instance.moods.add(mood)
+        for genre in request.POST.getlist('genres'):
+            instance.genres.add(genre)
         instance.save()
     return redirect('lyrics_show', instance.id)
 
 def show(request, id):
     lyrics = Lyric.objects.get(pk=id)
-
-    # code.interact(local=locals())
     return render(request, 'lyrics/show.html', locals())

@@ -15,9 +15,9 @@
     {% for mood in lyrics.moods.all %}
           <h4>  {{mood.title}}</h4>
           {% endfor %}
-    {% for mood in lyrics.genres.all %}
-                <h4>  {{genre.title}}</h4>
-                {% endfor %}
+    {% for genre in lyrics.genres.all %}
+      <h4>  {{genre.title}}</h4>
+          {% endfor %}
   </div>
 </div>
 {% endblock %}
