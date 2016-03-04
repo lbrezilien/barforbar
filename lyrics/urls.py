@@ -7,6 +7,7 @@ urlpatterns = [
     url(r'^new$', views.new, name='lyrics_new'),
     url(r'^create$', views.create, name='lyrics_create'),
     url(r'^(?P<id>\d+)/$', views.show, name='lyrics_show'),
+    url(r'^moods$', views.moods, name='moods'),
 
 
 

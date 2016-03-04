@@ -1,11 +1,13 @@
 from django.contrib.auth.models import User
-from .models import Lyric, Mood
+from .models import Lyric, Mood, Genre
 from django import forms
 
 class NewLyricForm(forms.ModelForm):
+    moods = forms.ModelMultipleChoiceField(queryset=Mood.objects.all())
+    genres = forms.ModelMultipleChoiceField(queryset=Genre.objects.all())
+
     class Meta:
         model = Lyric
-        moods = forms.ModelMultipleChoiceField(queryset=Mood.objects.all())
         widgets={
         'content': forms.Textarea(attrs={'cols': 500, 'rows': 500}),
         }

@@ -12,10 +12,10 @@
 </div>
 <div class="row">
   <div class="col s12">
-    {% for mood in lyrics.moods.all %}
+    {% for mood in lyrics.mood_set.all%}
           <h4>  {{mood.title}}</h4>
           {% endfor %}
-    {% for genre in lyrics.genres.all %}
+    {% for genre in lyrics.genre_set.all %}
       <h4>  {{genre.title}}</h4>
           {% endfor %}
   </div>

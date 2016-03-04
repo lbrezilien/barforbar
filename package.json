@@ -27,5 +27,8 @@
     "react": "^0.14.7",
     "webpack": "^1.12.14",
     "webpack-bundle-tracker": "0.0.93"
+  },
+  "dependencies": {
+    "react-router": "^2.0.0"
   }
 }
