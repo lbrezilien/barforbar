@@ -1,13 +1,21 @@
 from django.shortcuts import render, redirect
+from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 from .forms import NewLyricForm
 from .models import Lyric, Mood, Genre
 import code
+import json
+from django.core import serializers
+
 def index(request):
-    moods = Mood.objects.all()
+
+    data = serializers.serialize("json", Mood.objects.all(), fields=('title','lyric_mood'))
+
+    # data = json.dumps(moods)
     # code.interact(local=locals())
     #this will be where the discover link goes to
-    return render(request, 'lyrics/index.html', locals())
+    # return render(request, 'lyrics/index.html', locals())
+    return HttpResponse(data, content_type='application/json')
 
 def search(request):
     #this will be where the discover link goes to

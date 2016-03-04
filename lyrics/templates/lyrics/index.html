@@ -1,7 +1,9 @@
 {% extends 'base.html' %}
+{% load render_bundle from webpack_loader %}
 
 {% block content %}
-
+<div id="react-app"></div>
+<!--
   {% for mood in moods%}
     {{mood.title}}
     <ul>
@@ -10,6 +12,10 @@
       {% endfor %}
 
     </ul>
+  {% endfor %} -->
 
-  {% endfor %}
+
+
+
+{% render_bundle 'main' %}
 {% endblock %}
