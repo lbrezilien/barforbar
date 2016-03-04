@@ -1,0 +1,31 @@
+{
+  "name": "lyrics-project",
+  "version": "1.0.0",
+  "description": "The best way to discover the poetry in song lyrics",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lbrezilien/barforbar.git"
+  },
+  "keywords": [
+    "lyrics",
+    "music"
+  ],
+  "author": "Lesly Brezilien",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lbrezilien/barforbar/issues"
+  },
+  "homepage": "https://github.com/lbrezilien/barforbar#readme",
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-core": "^6.6.4",
+    "babel-loader": "^6.2.4",
+    "react": "^0.14.7",
+    "webpack": "^1.12.14",
+    "webpack-bundle-tracker": "0.0.93"
+  }
+}
