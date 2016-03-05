@@ -22,7 +22,7 @@ module.exports = React.createClass({
                   </div>
                   <div className="row">
                       {this.state.data.map(function(result) {
-                          return <Card key={result.pk} mood={result.fields} />;
+                          return <Card key={result.pk} mood={result} />;
                       })}
                       <hr></hr>
                   </div>
@@ -32,7 +32,7 @@ module.exports = React.createClass({
                   </div>
                   <div className="row" >
                     {this.state.data.map(function(result) {
-                        return <Card key={result.pk} mood={result.fields} />;
+                        return <Card key={result.pk} mood={result} />;
                     })}
                     <hr></hr>
                   </div>

@@ -12,14 +12,18 @@ def index(request):
     return render(request, 'lyrics/index.html')
 
 def moods(request):
-    # obj = Mood.objects.all()
-    # dump = []
-    # for i in obj:
-    #     a = {'id':i.id, 'title': i.title 'lyrics':}
-    #     dump.append(a)
+    obj = Mood.objects.all()
+    dump = []
+    for i in obj:
+        lyrics = []
+        for b in i.lyrics.all():
+            c = {'pk':b.id, 'title': b.title, 'artist': b.artist}
+            lyrics.append(c)
+        a = {'pk':i.id, 'title': i.title, 'lyrics':lyrics}
+        dump.append(a)
 
-    data = serializers.serialize("json", Mood.objects.all())
-    return HttpResponse(data, content_type='application/json')
+    # data = serializers.serialize("json", Mood.objects.all())
+    return HttpResponse(json.dumps(dump), content_type='application/json')
 
 def search(request):
     #this will be where the discover link goes to

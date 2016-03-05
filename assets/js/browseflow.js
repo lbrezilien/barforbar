@@ -20,7 +20,7 @@ module.exports = React.createClass({displayName: "exports",
                   ),
                   React.createElement("div", {className: "row"},
                       this.state.data.map(function(result) {
-                          return React.createElement(Card, {key: result.pk, mood: result.fields});
+                          return React.createElement(Card, {key: result.pk, mood: result});
                       }),
                       React.createElement("hr", null)
                   ),
@@ -30,7 +30,7 @@ module.exports = React.createClass({displayName: "exports",
                   ),
                   React.createElement("div", {className: "row"},
                     this.state.data.map(function(result) {
-                        return React.createElement(Card, {key: result.pk, mood: result.fields});
+                        return React.createElement(Card, {key: result.pk, mood: result});
                     }),
                     React.createElement("hr", null)
                   )
