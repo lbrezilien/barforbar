@@ -19,14 +19,18 @@
     <div class="nav-wrapper grey darken-4">
       <a href="#" class="brand-logo center">bars4bars</a>
       <ul id="nav-mobile" class="left hide-on-med-and-down">
-        <li><a href="{% url 'account_signup' %}">Signup</a></li>
-        <li><a href="{% url 'account_login' %}">Login</a></li>
-        <li><a href="{% url 'account_login' %}">Lyrics</a></li>
-        <li><a href="{% url 'account_logout' %}">Logout</a></li>
-        <li><a href="{% url 'account_logout' %}">Discover(react)</a></li>
-        <li><a href="{% url 'profiles_home' %}">Home</a></li>
-
-        <li><a href="collapsible.html">About</a></li>
+        {% if user.is_authenticated == False %}
+            <li><a href="{% url 'account_signup' %}">Signup</a></li>
+            <li><a href="{% url 'account_login' %}">Login</a></li>
+        {% else%}
+            <li><a href="{% url 'account_logout' %}">Logout</a></li>
+        {% endif %}
+        <li><a href="{% url 'profiles_home' %}">Me</a></li>
+      </ul>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="{% url 'account_login' %}">Search</a></li>
+          <li><a href="{% url 'lyrics_index' %}">Discover</a></li>
+          <li><a href="collapsible.html">About</a></li>
       </ul>
     </div>
   </nav>
@@ -37,8 +41,6 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
   <script src="{% static 'custom.js' %}"></script>
-
-
 
 </body>
 
