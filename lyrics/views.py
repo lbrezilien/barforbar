@@ -9,13 +9,21 @@ from django.core import serializers
 
 def index(request):
 
-    data = serializers.serialize("json", Mood.objects.all(), fields=('title','lyric_mood'))
+    return render(request, 'lyrics/index.html')
 
-    # data = json.dumps(moods)
-    # code.interact(local=locals())
-    #this will be where the discover link goes to
-    # return render(request, 'lyrics/index.html', locals())
-    return HttpResponse(data, content_type='application/json')
+def moods(request):
+    obj = Mood.objects.all()
+    dump = []
+    for i in obj:
+        lyrics = []
+        for b in i.lyrics.all():
+            c = {'pk':b.id, 'title': b.title, 'artist': b.artist}
+            lyrics.append(c)
+        a = {'pk':i.id, 'title': i.title, 'lyrics':lyrics}
+        dump.append(a)
+
+    # data = serializers.serialize("json", Mood.objects.all())
+    return HttpResponse(json.dumps(dump), content_type='application/json')
 
 def search(request):
     #this will be where the discover link goes to
@@ -36,9 +44,9 @@ def create(request):
         instance.user = user
         instance.save()
         for mood in request.POST.getlist('moods'):
-            instance.moods.add(mood)
+            instance.mood_set.add(mood)
         for genre in request.POST.getlist('genres'):
-            instance.genres.add(genre)
+            instance.genre_set.add(genre)
         instance.save()
     return redirect('lyrics_show', instance.id)
 

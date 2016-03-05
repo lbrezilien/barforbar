@@ -1,8 +1,14 @@
 var React = require('react')
-var Card = require('./card')
+var Browseflow = require('./browseflow')
+var Router = require('react-router').Router
+var Route = require('react-router').Route
+var Link = require('react-router').Link
+
 
 module.exports = React.createClass({
    render: function(){
-       return (<div className="row"><Card/></div>)
+       return (<div>
+                  {this.props.children}
+              </div>)
    }
 })
