@@ -8,93 +8,191 @@
   <div class="col s12">
     <ul class="tabs">
       <li class="tab col s3"><a href="#whoAmI"  >Who am I?</a></li>
-      <li class="tab col s3"><a href="#test2">My Music</a></li>
-      <li class="tab col s3"><a href="#accountEdit" class="active">My Account</a></li>
-      <li class="tab col s3"><a href="#cart"><i class="material-icons">shopping_cart</i></a></li>
+      <li class="tab col s3"><a href="#savedForLater" >My Likes</a></li>
+      <li class="tab col s3"><a href="#accountEdit" class="active" >My Account</a></li>
+      <!-- <li class="tab col s3"><a href="#cart"><i class="material-icons">shopping_cart</i></a></li> -->
     </ul>
   </div>
   <div id="whoAmI" class="col s12">
-    <div class="row flow-text z-depth-1">
-      <div class="col m8 ">
-          <h2>{{user.first_name}} {{user.last_name}}</h2>
-          <blockquote>
-            This is an example quotation that uses the blockquote tag.
-              {{about.why_quote}}
-         </blockquote>
-      </div>
-      <div class="col  m4">
-        <div class="col s11 push-s1">
-          <div class="card">
-            <div class="card-image ">
-          <img src="http://orig12.deviantart.net/4a0d/f/2012/200/0/1/tribal_wolf_head_avatar_by_darkwolf762-d57tft5.jpg" width="85%"/>
+
+    <div class="row">
+      <div class="col s12 ">
+        <div class="card">
+          <div class="card-action">
+            <a href="#"><i class="fa fa-user fa-2x"></i>  {{user.first_name}} {{user.last_name}}</a>
           </div>
-        </div>
+          <div class="card-action">
+            <a>Favorite <i class="fa fa-align-justify"></i>: </a>
+            <i class="fa fa-music"></i>...{{about.why_quote}}... <i class="fa fa-music"></i>
+          </div>
+          <div class="card-action">
+              <a>Genres:</a> <span class=" badge"> Jazz </span> <span class=" badge"> Hip Hop </span> <span class=" badge"> Blues </span> <span class=" badge"> Rock </span>
+          </div>
         </div>
       </div>
     </div>
-    <div class="row flow-text white z-depth-1">
-      <div class="col s12">
 
 
-      <h4> Briefly About Me: </h4>
-      <p>
-        {{about.description}}
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam similique debitis nemo beatae laborum modi tempora qui dolores impedit reiciendis autem, facilis provident error sint incidunt, voluptatum quasi quaerat porro. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis ullam corporis eius delectus harum possimus optio saepe ipsam dolores excepturi molestiae praesentium adipisci nam rerum at quidem qui, commodi atque!
-      </p>
+    <div class="row">
+      <div class="col s12 ">
+        <div class="card">
+          <div class="card-action">
+            <a href="#"><i class="fa fa-info-circle fa-2x"></i>  About Me</a>
+          </div>
+          <div class="card-action ">
+            <p>{{about.description}}
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam similique debitis nemo beatae laborum modi tempora qui dolores impedit reiciendis autem, facilis provident error sint incidunt, voluptatum quasi quaerat porro. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis ullam corporis eius delectus harum possimus optio saepe ipsam dolores excepturi molestiae praesentium adipisci nam rerum at quidem qui, commodi atque!
+            </p>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div id="test2" class="col s12">
-    <ul  class="collapsible popout" data-collapsible="accordion">
-      <li>
-        <div class="collapsible-header active"><i class="material-icons">queue_music</i>My Saved Lyrics</div>
-        <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-      </li>
-      <li>
-        <div class="collapsible-header"><i class="material-icons">playlist_add</i>Submit New Lyrics</div>
-        <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-      </li>
-      <li>
-        <div class="collapsible-header"><i class="material-icons">playlist_add</i>What I'm Selling</div>
-        <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-      </li>
-    </ul>
-  </div>
-
-  <div id="accountEdit" class="col s12">
-
-    <div class="row flow-text white z-depth-1">
-        <div class="col ">
-          <h4>Login Details:</h4>
-        </div>
-      <div class="col s12">
-        <form id="accountForm">
-          {% csrf_token %}
-          {{info_form.as_p}}
-          <div class="col offset-s5">
-            <button type="submit" class="btn "> Update My Info</button>
+    <div class="row">
+      <div class="col s12 ">
+        <div class="card">
+          <div class="card-action">
+            <a href="#"><i class="fa fa-upload fa-2x"></i>  My Contributions</a>
           </div>
-        </form>
+          <div class="card-action">
+            <table class="">
+              <thead>
+                <tr>
+                    <th data-field="id">Song Name</th>
+                    <th data-field="name">Artist</th>
+                    <th data-field="price">Lyrics</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td>Alvin and a chimpunlk squeeks</td>
+                  <td>Just Alvin</td>
+                  <td><a href=""><i class="material-icons">description</i></a></td>
+                </tr>
+                <tr>
+                  <td>Alan</td>
+                  <td>Jellybean</td>
+                  <td><a href=""><i class="material-icons">description</i></a></td>
+                </tr>
+                <tr>
+                  <td>Jonathan</td>
+                  <td>Lollipop</td>
+                  <td><a href=""><i class="material-icons">description</i></a></td>
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+        </div>
       </div>
    </div>
 
-  <div class="row flow-text white z-depth-1">
-    <div class="col col-offset-s1">
-      <h4>About Me:</h4>
-    </div>
-    <div class="col s12">
-      <form id="aboutForm">
-          {% csrf_token %}
-          {{about_form.as_p}}
-        <div class="col offset-s5">
-          <button type="submit" class="btn "> Update my Details</button>
-       </div>
-      </form>
-    </div>
- </div>
+
+</div>
+
+  <div id="savedForLater" class="col s12">
+    <div class="row">
+       <div class="col s12 ">
+         <div class="card">
+           <div class="card-action">
+             <a href="#"><i class="fa fa-play-circle-o fa-2x"></i>  Saved For Later</a>
+           </div>
+           <div class="card-action">
+             <table class="bordered striped">
+               <thead>
+                 <tr>
+                     <th data-field="id">Song Name</th>
+                     <th data-field="name">Artist</th>
+                     <th data-field="price">Lyrics</th>
+                 </tr>
+               </thead>
+
+               <tbody>
+                 <tr>
+                   <td>Alvin and a chimpunlk squeeks</td>
+                   <td>Just Alvin</td>
+                   <td><a href=""><i class="material-icons">description</i></a></td>
+                 </tr>
+                 <tr>
+                   <td>Alan</td>
+                   <td>Jellybean</td>
+                   <td><a href=""><i class="material-icons">description</i></a></td>
+                 </tr>
+                 <tr>
+                   <td>Jonathan</td>
+                   <td>Lollipop</td>
+                   <td><a href=""><i class="material-icons">description</i></a></td>
+                 </tr>
+               </tbody>
+             </table>
+
+           </div>
+         </div>
+     </div>
+   </div>
 
   </div>
+
+  <div id="accountEdit" class="col s12">
+    <div class="row ">
+      <div class="col s12   white transparentize z-depth-2 form-padding">
+        <form action="" method="post" id="accountForm">
+          {% csrf_token %}
+          <div class="col s8 offset-m2">
+            {{info_form}}
+          </div>
+
+          <!-- <div class="col s8 offset-m2">
+            {{info_form.password}}
+          </div>
+
+          <div class="col s8 offset-m2">
+            {{info_form.first_name}}
+          </div>
+
+          <div class="col s8 offset-m2">
+            {{info_form.last_name}}
+          </div> -->
+
+          <div class="row">
+            <div class="input-field col offset-s5 s3">
+              <button type="submit" name="login" class="waves-effect waves-light btn grey darken-4">Update</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="row ">
+      <div class="col s12   white transparentize z-depth-2 form-padding">
+        <form action="" method="post" id="aboutForm">
+          {% csrf_token %}
+          <div class="col s8 offset-m2">
+            {{about_form}}
+          </div>
+
+          <!-- <div class="col s8 offset-m2">
+            {{info_form.password}}
+          </div>
+
+          <div class="col s8 offset-m2">
+            {{info_form.first_name}}
+          </div>
+
+          <div class="col s8 offset-m2">
+            {{info_form.last_name}}
+          </div> -->
+
+          <div class="row">
+            <div class="input-field col offset-s5 s3">
+              <button type="submit" name="login" class="waves-effect waves-light btn grey darken-4">Update</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+   </div>
 
 </div>
 

@@ -9,7 +9,7 @@ img{
 .transparentize {
     margin-top: 1%;
     border-radius: 3px;
-    opacity: .9;
+    /*opacity: .9;*/
   }
 
 .form-padding{
@@ -39,4 +39,15 @@ img{
 
 .center-text{
   text-align: center;
+}
+
+span.badge{
+  position:static;
+  font-weight: 300;
+  font-size: 1.2rem;
+  color: #fff;
+  background-color: #5B5F5E;
+  border-radius: 2px;
+  padding: .2em;
+  margin-left: .3em
 }
