@@ -4,8 +4,25 @@ var Link = require('react-router').Link
 
 module.exports = React.createClass({
    moodGenreDict: {
-        Happy:'smile-o',
-        angry:'frown-o'
+     "Happy":'smile-o',
+     "Just Chill":'meh-o',
+     "Ice Cream Sad":'thumbs-down',
+     "Feel Good":'reddit-alien',
+     "Butterflies":'bug',
+     "Head Banging":'bolt',
+     "Swagged Out":'fighter-jet',
+     "Inspirational":'beer',
+     "Confidence Boost":'exclamation',
+     "Hip Hop":'headphones',
+     "Rock":'bolt',
+     "R&B":'gratiplay',
+     "Jazz":'music',
+     "Wierd":'moon-o',
+     "Blues":'cloud',
+     "Pop":'magic',
+     "Spoken Word":'microphone',
+     "Other":'question'
+
    },
    render: function(){
        return (

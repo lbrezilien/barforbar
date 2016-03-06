@@ -4,8 +4,24 @@ var React = require('react')
 
 module.exports = React.createClass({displayName: "exports",
    moodGenreDict: {
-        Happy:'smile-o',
-        Angry:'frown-o'
+     "Happy":'smile-o',
+     "Just Chill":'meh-o',
+     "Ice Cream Sad":'thumbs-down',
+     "Feel Good":'reddit-alien',
+     "Butterflies":'bug',
+     "Head Banging":'bolt',
+     "Swagged Out":'fighter-jet',
+     "Inspirational":'beer',
+     "Confidence Boost":'exclamation',
+     "Hip Hop":'headphones',
+     "Rock":'bolt',
+     "R&B":'gratiplay',
+     "Jazz":'music',
+     "Wierd":'moon-o',
+     "Blues":'cloud',
+     "Pop":'magic',
+     "Spoken Word":'microphone',
+     "Other":'question'
    },
    render: function(){
        return (
