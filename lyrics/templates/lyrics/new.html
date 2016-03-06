@@ -43,4 +43,9 @@
   </div>
 </div>
 
+<script>
+    CKEDITOR.replace( 'id_content', {
+      disallowedContent: 'a[!href]; ul; li{text-align}(someclass)'
+      });
+</script>
 {% endblock %}

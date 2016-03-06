@@ -40,9 +40,7 @@
             <a href="#"><i class="fa fa-info-circle fa-2x"></i>  About Me</a>
           </div>
           <div class="card-action ">
-            <p>{{about.description}}
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam similique debitis nemo beatae laborum modi tempora qui dolores impedit reiciendis autem, facilis provident error sint incidunt, voluptatum quasi quaerat porro. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis ullam corporis eius delectus harum possimus optio saepe ipsam dolores excepturi molestiae praesentium adipisci nam rerum at quidem qui, commodi atque!
-            </p>
+            <p>{{about.description |safe}}</p>
           </div>
         </div>
       </div>
@@ -171,6 +169,11 @@
 
 </div>
 
+<!-- <script>
+      CKEDITOR.replace( 'id_description', {
+              disallowedContent: 'a[!href]; ul; li{text-align}(someclass)'
+        });
+</script> -->
 
 
 {% endblock %}
