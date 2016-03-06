@@ -1,5 +1,5 @@
-var React = require('react')
 
+var React = require('react')
 module.exports = React.createClass({
   getInitialState: function(){
       return {songs: []};
@@ -15,12 +15,32 @@ module.exports = React.createClass({
   },
    render: function(){
        var comp = this;
-       return (<div className="row">
+       return (<div className="row card form-padding">
+                <h2> {this.props.params.name} Songs: </h2>
                  <ul>
-                    {comp.state.songs.map(function(song){
-                      return (<li key={song.pk}>Song Title: {song.title}, Artist: {song.artist}</li>)
-                    })}
+
                 </ul>
+
+                <table className="highlight ">
+                  <thead>
+                    <tr>
+                        <th data-field="SongTitle">Song Title</th>
+                        <th data-field="Artist">Artist </th>
+                        <th data-field="Lyrics">Lyrics </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  {comp.state.songs.map(function(song){
+                    return ( <tr key={song.pk}>
+                                <td>{song.title}</td><td>{song.artist}</td>
+                                <td>
+                                <a href={"/lyrics/"+song.pk}><i className="material-icons">description</i></a>
+                                </td>
+
+                             </tr>)
+                   })}
+                  </tbody>
+                </table>
               </div>)
 
    }

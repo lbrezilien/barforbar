@@ -19,3 +19,24 @@ img{
 .error-message{
   color: red;
 }
+
+.discover img{
+  opacity: .4;
+  z-index: 2;
+}
+
+.discover{
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+
+.icon{
+  z-index: 1;
+  position: relative;
+  margin-top:-38%;
+}
+
+.center-text{
+  text-align: center;
+}
