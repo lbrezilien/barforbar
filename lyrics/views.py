@@ -21,8 +21,19 @@ def moods(request):
             lyrics.append(c)
         a = {'pk':i.id, 'title': i.title, 'lyrics':lyrics}
         dump.append(a)
+    return HttpResponse(json.dumps(dump), content_type='application/json')
 
-    # data = serializers.serialize("json", Mood.objects.all())
+def genres(request):
+    obj = Genre.objects.all()
+    dump = []
+    for i in obj:
+        lyrics = []
+        for b in i.lyrics.all():
+            c = {'pk':b.id, 'title': b.title, 'artist': b.artist}
+            lyrics.append(c)
+        a = {'pk':i.id, 'title': i.title, 'lyrics':lyrics}
+        dump.append(a)
+
     return HttpResponse(json.dumps(dump), content_type='application/json')
 
 def search(request):
