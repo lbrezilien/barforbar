@@ -1,23 +1,24 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="row">
+<div class="row card " style="text-align:center">
   <div class="col s12">
-    <h1>{{lyrics.title}} - {{lyrics.artist}}</h1>
+    <h3 class="badge">{{lyrics.title}} by {{lyrics.artist}}</span></h3>
   </div>
-</div>
 <div class="row">
-  <div class="col s12">
+  <div class="col s12" >
     <p>{{lyrics.content|safe}}</p>
   </div>
 </div>
+
 <div class="row">
   <div class="col s12">
-    {% for mood in lyrics.mood_set.all%}
-          <h4>  {{mood.title}}</h4>
+  Tags:  {% for mood in lyrics.mood_set.all%}
+         <span class="badge"> {{mood.title}}</span>
           {% endfor %}
     {% for genre in lyrics.genre_set.all %}
-      <h4>  {{genre.title}}</h4>
+    <span class="badge"> {{genre.title}}</span>
           {% endfor %}
   </div>
+</div>
 </div>
 {% endblock %}
