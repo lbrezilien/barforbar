@@ -1,11 +1,18 @@
 {% extends 'base.html' %}
+{% load staticfiles %}
 
 {% block content %}
     <div class="row ">
-      <div class="col s12 m8 offset-m2 white transparentize z-depth-2">
+      <div class="col s12 m8 offset-m2 white transparentize z-depth-2 form-padding">
         <form class="" action="" method="post">
-          {% csrf_token %}
-          {{form}}
+            {% csrf_token %}
+            <div class="col s8 offset-m2">
+              {{form.username}}
+            </div>
+            <div class="col s8 offset-m2">
+              {{form.password}}
+            </div>
+
           <div class="row">
             <div class="input-field col offset-s4 s3">
               <button type="submit" name="login" class="waves-effect waves-light btn grey darken-4">Login</button>
@@ -13,6 +20,9 @@
           </div>
         </form>
       </div>
+    </div>
+    <div>
+      <img src="{% static 'img/login-back.png' %}" alt=""/>
     </div>
 
 

@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect
-from profiles.forms import UserSignUpForm, UserInfoEditForm, UserAboutEditForm
-from django.contrib.auth import authenticate, login
+from profiles.forms import UserSignUpForm, UserInfoEditForm, UserAboutEditForm, myLoginForm
+from django.contrib.auth import authenticate, login as auth_login
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth.hashers import make_password
 from .models import User, About
@@ -48,12 +48,36 @@ def update_about(request):
     return HttpResponse('')
 
 
+def login(request):
+    form = AuthenticationForm(request.POST or None)
+    form.fields['username'].widget.attrs.update({'placeholder': 'Username:'})
+    form.fields['password'].widget.attrs.update({'placeholder': 'Password:'})
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(username=username, password=password)
+        if user is not None:
+            if user.is_active:
+                auth_login(request, user)
+                return redirect('home')
+            else:
+                return redirect('home')
+
+
+    return render(request, 'profiles/login.html', locals())
+
 
 def signup(request):
     form = UserCreationForm(request.POST or None)
+    form.fields['username'].widget.attrs.update({'placeholder': 'Username:'})
+    form.fields['password1'].widget.attrs.update({'placeholder': 'Password:'})
+    form.fields['password2'].widget.attrs.update({'placeholder': 'Confirm Password:'})
+
     if form.is_valid():
          instance = form.save(commit=False)
          instance.is_active = True
          instance.save()
+         instance.backend = "django.contrib.auth.backends.ModelBackend"
+         auth_login(request, instance)
          return redirect('home')
     return render(request, 'profiles/signup.html', {'form': form})

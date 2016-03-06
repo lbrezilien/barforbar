@@ -9,6 +9,8 @@ class NewLyricForm(forms.ModelForm):
     class Meta:
         model = Lyric
         widgets={
-        'content': forms.Textarea(attrs={'cols': 500, 'rows': 500}),
+            'artist': forms.TextInput(attrs={'Placeholder': 'Artist:'}),
+            'title': forms.TextInput(attrs={'Placeholder': 'Title:'}),
+            'content': forms.Textarea(attrs={'cols': 500, 'rows': 500, 'Placeholder': 'Place your lyrics here (Copy & Paste or Type)', 'class' : 'materialize-textarea' }),
         }
         exclude = ['user','id']

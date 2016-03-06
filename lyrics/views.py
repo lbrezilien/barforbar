@@ -29,16 +29,17 @@ def search(request):
     #this will be where the discover link goes to
     return render(request, 'lyrics/index.html')
 
-@login_required
-def new(request):
-    form = NewLyricForm()
-    return render(request, 'lyrics/new.html', locals())
+# @login_required
+# def new(request):
+#     form = NewLyricForm(request.POST or None)
+#     return render(request, 'lyrics/new.html', locals())
 
 @login_required
 def create(request):
     user = request.user
     #add and if statement for update and create
-    form = NewLyricForm(request.POST)
+    form = NewLyricForm(request.POST or None)
+    # code.interact(local=locals())
     if form.is_valid():
         instance = form.save(commit=False)
         instance.user = user
@@ -48,7 +49,11 @@ def create(request):
         for genre in request.POST.getlist('genres'):
             instance.genre_set.add(genre)
         instance.save()
-    return redirect('lyrics_show', instance.id)
+        return redirect('lyrics_show', instance.id)
+    else:
+        return render(request, 'lyrics/new.html', locals())
+
+
 
 def show(request, id):
     lyrics = Lyric.objects.get(pk=id)

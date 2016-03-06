@@ -1,13 +1,21 @@
 img{
   padding-top: 2%;
 }
-.add-padding{
+/*.add-padding{
   padding-top: .7em;
 
-}
+}*/
 
 .transparentize {
-    margin-top: 16%;
+    margin-top: 1%;
     border-radius: 3px;
     opacity: .9;
   }
+
+.form-padding{
+  padding: 5% !important;
+}
+
+.error-message{
+  color: red;
+}
