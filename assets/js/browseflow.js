@@ -16,20 +16,12 @@ module.exports = React.createClass({displayName: "exports",
         });
    },
    render: function(){
-       return (React.createElement("div", {className: "row"},
-                  React.createElement("div", {className: "row"},
-                    React.createElement("h2", null, " Browse by Mood: "),
-                    React.createElement("hr", null)
-                  ),
+       return (React.createElement("div", {className: "row "},
                   React.createElement("div", {className: "row"},
                       this.state.moods.map(function(result) {
                           return React.createElement(Card, {key: result.pk, category: result, url: "moods"});
                       }),
                       React.createElement("hr", null)
-                  ),
-                  React.createElement("div", {className: "row"},
-                    React.createElement("h2", null, " Browse by Genre: "),
-                    React.createElement("hr", null)
                   ),
                   React.createElement("div", {className: "row"},
                     this.state.genres.map(function(result) {

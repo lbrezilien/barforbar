@@ -18,20 +18,12 @@ module.exports = React.createClass({
         });
    },
    render: function(){
-       return (<div className="row">
-                  <div className="row">
-                    <h2> Browse by Mood: </h2>
-                    <hr></hr>
-                  </div>
+       return (<div className="row ">
                   <div className="row">
                       {this.state.moods.map(function(result) {
                           return <Card key={result.pk} category={result} url={"moods"} />;
                       })}
                       <hr></hr>
-                  </div>
-                  <div className="row">
-                    <h2> Browse by Genre: </h2>
-                    <hr></hr>
                   </div>
                   <div className="row" >
                     {this.state.genres.map(function(result) {

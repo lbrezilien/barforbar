@@ -16,7 +16,7 @@ module.exports = React.createClass({
      "Rock":'bolt',
      "R&B":'gratipay',
      "Jazz":'music',
-     "Wierd":'moon-o',
+     "Weird":'moon-o',
      "Blues":'cloud',
      "Pop":'magic',
      "Spoken Word":'microphone',
