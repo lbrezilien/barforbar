@@ -1,16 +1,19 @@
 var Card = require('./card')
-var uselessVar = "";
 var React = require('react')
 
 module.exports = React.createClass({displayName: "exports",
   getInitialState: function(){
-    return {data: []};
+    return {moods: [], genres: []};
   },
   componentDidMount: function(){
        var component = this;
        $.get("http://localhost:8000/lyrics/moods", function(data){
-         component.setState({data: data});
+         component.setState({moods: data});
        });
+
+       $.get("http://localhost:8000/lyrics/genres", function(data){
+          component.setState({genres: data});
+        });
    },
    render: function(){
        return (React.createElement("div", {className: "row"},
@@ -19,8 +22,8 @@ module.exports = React.createClass({displayName: "exports",
                     React.createElement("hr", null)
                   ),
                   React.createElement("div", {className: "row"},
-                      this.state.data.map(function(result) {
-                          return React.createElement(Card, {key: result.pk, mood: result});
+                      this.state.moods.map(function(result) {
+                          return React.createElement(Card, {key: result.pk, category: result, url: "moods"});
                       }),
                       React.createElement("hr", null)
                   ),
@@ -29,8 +32,8 @@ module.exports = React.createClass({displayName: "exports",
                     React.createElement("hr", null)
                   ),
                   React.createElement("div", {className: "row"},
-                    this.state.data.map(function(result) {
-                        return React.createElement(Card, {key: result.pk, mood: result});
+                    this.state.genres.map(function(result) {
+                        return React.createElement(Card, {key: result.pk, category: result, url: "genres"});
                     }),
                     React.createElement("hr", null)
                   )

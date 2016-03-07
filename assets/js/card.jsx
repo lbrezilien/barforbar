@@ -1,5 +1,4 @@
 var React = require('react')
-var uselessVar = "";
 var Link = require('react-router').Link
 
 module.exports = React.createClass({
@@ -15,7 +14,7 @@ module.exports = React.createClass({
      "Confidence Boost":'exclamation',
      "Hip Hop":'headphones',
      "Rock":'bolt',
-     "R&B":'gratiplay',
+     "R&B":'gratipay',
      "Jazz":'music',
      "Wierd":'moon-o',
      "Blues":'cloud',
@@ -32,12 +31,12 @@ module.exports = React.createClass({
                <div className="card-image discover" >
                  <img src={"/static/img/"+"happy.jpeg"}></img>
                  <div className="icon">
-                    <i className={"fa fa-5x fa-"+this.moodGenreDict[""+this.props.mood.title+""]}></i>
+                    <i className={"fa fa-5x fa-"+this.moodGenreDict[""+this.props.category.title+""]}></i>
                  </div>
                </div>
                <div className="card-action center-text">
-               <Link to={"mood/"+this.props.mood.title}>
-                   <span className="bold" >{this.props.mood.title}</span>
+               <Link to={this.props.url+"/"+this.props.category.title} apiRoute={this.props.url}>
+                   <span className="bold" >{this.props.category.title}</span>
                </Link>
                </div>
              </div>

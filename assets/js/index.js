@@ -11,8 +11,8 @@ ReactDOM.render(
                 React.createElement(Router, null,
                   React.createElement(Route, {component: App},
                      React.createElement(Route, {path: "/", component: Browseflow}),
-                     React.createElement(Route, {path: "mood/:name", component: SongList})
-
+                     React.createElement(Route, {path: "moods/:name", component: SongList}),
+                     React.createElement(Route, {path: "genres/:name", component: SongList})
                   )
                 ),
                  document.getElementById('react-app')

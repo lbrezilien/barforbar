@@ -6,7 +6,12 @@ module.exports = React.createClass({
   },
   componentDidMount: function(){
       var component = this;
-      $.get("http://localhost:8000/lyrics/moods", function(data){
+      var api = "";
+      if (this.props.route.path.indexOf('moods') >= 0)
+        { api = 'moods' }
+      else
+        { api = 'genres'}
+      $.get("http://localhost:8000/lyrics/"+api, function(data){
           var songs = data.filter(function(object){
               if(object.title == component.props.params.name){ return object}
             })
